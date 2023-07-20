@@ -1,0 +1,25 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+main {
+  height: 100%;
+}
+
+@media (min-width: 992px) {
+  main {
+    display: flex;
+
+    app-hero {
+      width: 40%;
+      height: 100%;
+    }
+
+    app-dynamic-form {
+      width: 60%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use "../../../scss/images" as images;
+@use "../../../scss/color-palette" as colors;
+
+/* reusable styles */
+
+.card {
+  position: absolute;
+  max-width: 29rem;
+}
+
+span {
+  color: colors.$clr-neutral-200;
+}
+
+/* mobile styles <=576px */
+
+.container {
+  position: relative;
+  min-height: 25rem;
+  background-image: images.$bg-main-mobile;
+  background-size: cover;
+}
+
+.card-back {
+  top: 15%;
+  right: 3%;
+
+  span {
+    position: absolute;
+    top: 45%;
+    right: 11%;
+    font-size: 1rem;
+  }
+}
+
+.card-front {
+  bottom: -10%;
+  left: 3%;
+
+  &__logo {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    height: 3rem;
+  }
+
+  &__name-and-date {
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  > span:first-of-type {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 3px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    height: 100%;
+    background-image: images.$bg-main-desktop;
+
+    .card {
+      position: relative;
+      max-width: 35rem;
+    }
+
+    .card-front {
+      top: 0%;
+      left: 60%;
+
+      &__name-and-date {
+        position: absolute;
+        bottom: 10%;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      > span:first-of-type {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        letter-spacing: 3px;
+      }
+    }
+
+    .card-back {
+      top: 55%;
+      left: 70%;
+    }
+  }
+}

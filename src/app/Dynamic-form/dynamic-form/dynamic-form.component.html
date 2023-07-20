@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div *ngFor="let formEl of formElements">
+    <app-dynamic-form-el [formEl]="formEl" [form]="form"></app-dynamic-form-el>
+  </div>
+
+  <button class="btn-confrim" type="submit" [disabled]="!form.valid">
+    Save
+  </button>
+</form>

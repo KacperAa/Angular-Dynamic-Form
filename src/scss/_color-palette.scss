@@ -1,0 +1,14 @@
+/* primary colors  */
+$clr-primary-400: hsl(0, 100%, 66%);
+
+/* neutral */
+$clr-neutral-100: hsl(0, 0%, 100%);
+$clr-neutral-200: hsl(270, 3%, 87%);
+$clr-neutral-500: hsl(279, 6%, 55%);
+$clr-neutral-900: hsl(278, 68%, 11%);
+
+$primary-clr-gradient: linear-gradient(
+  90deg,
+  rgba(100, 72, 254, 1) 2%,
+  rgba(96, 5, 148, 1) 58%
+);

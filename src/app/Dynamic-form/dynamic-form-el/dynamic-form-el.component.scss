@@ -1,0 +1,23 @@
+@use "../../../scss/color-palette" as colors;
+
+input {
+  width: 100%;
+}
+
+label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+input {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid colors.$clr-neutral-200;
+}
+
+::placeholder {
+  color: colors.$clr-neutral-200;
+}
