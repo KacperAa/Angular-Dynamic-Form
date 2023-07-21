@@ -21,7 +21,6 @@ export class FormElService {
             rules: {
               required: true,
               maxLength: 20,
-              pattern: '[A-Za-z]*',
             },
           }),
 
