@@ -3,7 +3,12 @@ export class FormElBase<T> {
   key: string;
   label: string;
   placeholder: string;
-  required: boolean;
+  rules: {
+    required: boolean;
+    maxLength: number;
+    pattern: string;
+  };
+
   order: number;
   controlType: string;
   type: string;
@@ -15,7 +20,7 @@ export class FormElBase<T> {
       key?: string;
       label?: string;
       placeholder?: string;
-      required?: boolean;
+      rules?: any;
       order?: number;
       controlType?: string;
       type?: string;
@@ -26,7 +31,7 @@ export class FormElBase<T> {
     this.key = options.key || '';
     this.label = options.label || '';
     this.placeholder = options.placeholder || '';
-    this.required = !!options.required;
+    this.rules = options.rules || {};
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';
     this.type = options.type || '';
@@ -36,5 +41,4 @@ export class FormElBase<T> {
 
 export class InputEl extends FormElBase<string> {
   override controlType = 'input';
-  override required: boolean = true;
 }

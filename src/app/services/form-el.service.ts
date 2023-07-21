@@ -14,6 +14,11 @@ export class FormElService {
         order: 1,
         type: 'text',
         placeholder: 'e.g Jane Applessed',
+        rules: {
+          required: true,
+          maxLength: 20,
+          pattern: '[A-Za-z]*',
+        },
       }),
 
       new InputEl({
@@ -22,6 +27,11 @@ export class FormElService {
         order: 2,
         type: 'text',
         placeholder: 'e.g 1234 5678 9123 0000',
+        rules: {
+          required: true,
+          maxLength: 16,
+          pattern: '[0-9]*',
+        },
       }),
 
       new InputEl({
@@ -30,6 +40,11 @@ export class FormElService {
         order: 3,
         type: 'text',
         placeholder: 'MM',
+        rules: {
+          required: true,
+          maxLength: 2,
+          pattern: '[0-9]*',
+        },
       }),
 
       new InputEl({
@@ -38,6 +53,11 @@ export class FormElService {
         order: 4,
         type: 'text',
         placeholder: 'YY',
+        rules: {
+          required: true,
+          maxLength: 2,
+          pattern: '[0-9]*',
+        },
       }),
 
       new InputEl({
@@ -46,6 +66,11 @@ export class FormElService {
         order: 5,
         type: 'text',
         placeholder: 'e.g 123',
+        rules: {
+          required: true,
+          maxLength: 3,
+          pattern: '[0-9]*',
+        },
       }),
     ];
 

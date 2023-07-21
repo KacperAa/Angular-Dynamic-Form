@@ -11,10 +11,7 @@
     />
   </div>
 
-  <div
-    class="error-message"
-    *ngIf="!isValid && form.controls[this.formEl.key].touched"
-  >
-    {{ formEl.label }} is required
+  <div class="error-message" *ngIf="!isValid && formControl.touched">
+    {{ getErrorMessages() }}
   </div>
 </div>
