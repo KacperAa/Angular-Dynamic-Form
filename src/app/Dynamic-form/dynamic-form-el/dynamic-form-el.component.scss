@@ -23,7 +23,6 @@ input {
 input:focus {
   outline: 2px solid;
   outline-color: colors.$primary-clr-gradient;
-  box-shadow: 0 0 5px rgba(96, 5, 148, 1);
 }
 
 ::placeholder {
