@@ -1,7 +1,8 @@
 <main>
   <app-hero [form]="form"></app-hero>
   <app-dynamic-form
-    [formElements]="formElements$ | async"
+    [formElDirection]="formElements$ | async"
     (emitForm)="getForm($event)"
+    (click)="changeView()"
   ></app-dynamic-form>
 </main>

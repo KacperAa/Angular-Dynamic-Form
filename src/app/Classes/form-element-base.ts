@@ -9,7 +9,6 @@ export class FormElBase<T> {
     pattern: string;
   };
 
-  order: number;
   controlType: string;
   type: string;
   options: { key: string; value: string }[];
@@ -21,7 +20,7 @@ export class FormElBase<T> {
       label?: string;
       placeholder?: string;
       rules?: any;
-      order?: number;
+
       controlType?: string;
       type?: string;
       options?: { key: string; value: string }[];
@@ -32,7 +31,7 @@ export class FormElBase<T> {
     this.label = options.label || '';
     this.placeholder = options.placeholder || '';
     this.rules = options.rules || {};
-    this.order = options.order === undefined ? 1 : options.order;
+
     this.controlType = options.controlType || '';
     this.type = options.type || '';
     this.options = options.options || [];

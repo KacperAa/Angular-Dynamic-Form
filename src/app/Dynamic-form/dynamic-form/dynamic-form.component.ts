@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormElBase } from 'src/app/Classes/form-element-base';
+import { FormElDirection } from 'src/app/Interfaces/form-el-direction.interface';
 import { FormControlService } from 'src/app/services/form-control.service';
 
 @Component({
@@ -9,19 +10,33 @@ import { FormControlService } from 'src/app/services/form-control.service';
   styleUrls: ['./dynamic-form.component.scss'],
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() public formElements: FormElBase<string>[] | null = [];
+  @Input() public formElDirection: FormElDirection[] | null = [];
   public form!: FormGroup;
   @Output()
   public emitForm = new EventEmitter<FormGroup>();
+  @Output()
+  public click: EventEmitter<never> = new EventEmitter<never>();
+  get formControls(): FormElBase<string>[] | undefined {
+    return this.formElDirection?.flatMap(
+      (formEl: FormElDirection) => formEl.formElements
+    );
+  }
 
   constructor(private _formControlService: FormControlService) {}
 
   public ngOnInit() {
     this.form = this._formControlService.toFormGroup(
-      this.formElements as FormElBase<string>[]
+      this.formControls as FormElBase<string>[]
     );
     this.emitForm.emit(this.form);
   }
 
-  public onSubmit() {}
+  public onSubmit(): void {
+    console.log(this.form);
+    if (this.form.valid) {
+      this.click.emit();
+    } else {
+      console.log('japa');
+    }
+  }
 }

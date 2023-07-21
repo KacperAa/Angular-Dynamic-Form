@@ -2,8 +2,7 @@
 
 form {
   display: grid;
-  align-content: space-around;
-  height: 100%;
+
   padding: 8rem 2.5rem 4rem;
 
   .btn-confrim {
@@ -21,10 +20,24 @@ form {
     background-color: rgba(96, 5, 148, 1);
     box-shadow: 0 0 7px rgba(96, 5, 148, 1);
   }
+
+  .row-direction {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+  }
 }
 
 @media (min-width: 992px) {
   form {
+    height: 100%;
+    align-content: center;
     padding-inline: 25rem;
   }
+}
+
+button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
 }

@@ -1,9 +1,22 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="form">
-  <div *ngFor="let formEl of formElements">
-    <app-dynamic-form-el [formEl]="formEl" [form]="form"></app-dynamic-form-el>
-  </div>
+  <ng-container *ngFor="let formEl of formElDirection">
+    <div *ngIf="formEl.direction === 'column'" class="column-direction">
+      <app-dynamic-form-el
+        *ngFor="let formElement of formEl.formElements"
+        [formEl]="formElement"
+        [form]="form"
+      ></app-dynamic-form-el>
+    </div>
+    <div *ngIf="formEl.direction === 'row'" class="row-direction">
+      <app-dynamic-form-el
+        *ngFor="let formElement of formEl.formElements"
+        [formEl]="formElement"
+        [form]="form"
+      ></app-dynamic-form-el>
+    </div>
+  </ng-container>
 
   <button class="btn-confrim" type="submit" [disabled]="!form.valid">
-    Save
+    Confrim
   </button>
 </form>
