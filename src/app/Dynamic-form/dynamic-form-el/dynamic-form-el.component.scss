@@ -2,6 +2,7 @@
 
 input.ng-touched.ng-invalid {
   outline: 2px solid colors.$clr-primary-400;
+  border: none;
 }
 
 label {
@@ -17,6 +18,12 @@ input {
   padding: 1rem;
   border-radius: 1rem;
   border: 1px solid colors.$clr-neutral-200;
+}
+
+input:focus {
+  outline: 2px solid;
+  outline-color: colors.$primary-clr-gradient;
+  box-shadow: 0 0 5px rgba(96, 5, 148, 1);
 }
 
 ::placeholder {
