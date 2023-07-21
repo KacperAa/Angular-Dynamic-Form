@@ -103,14 +103,16 @@ span {
 }
 
 @media (min-width: 1340px) {
-  .card-front {
-    top: 0%;
-    left: 55%;
-  }
+  .container {
+    .card-front {
+      top: 0%;
+      left: 50%;
+    }
 
-  .card-back {
-    top: 55%;
-    left: 65%;
+    .card-back {
+      top: 55%;
+      left: 60%;
+    }
   }
 }
 
