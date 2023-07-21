@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ApplicationRef, Component } from '@angular/core';
 import { FormElService } from './services/form-el.service';
-import { FormElBase } from './Classes/form-element-base';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { FormElDirection } from './Interfaces/form-el-direction.interface';
@@ -10,20 +9,32 @@ import { FormElDirection } from './Interfaces/form-el-direction.interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   public formElements$!: Observable<FormElDirection[]>;
   public form: FormGroup = new FormGroup({});
+  public isChangedView: boolean = false;
 
-  constructor(private _formElService: FormElService) {
+  constructor(
+    private _formElService: FormElService,
+    private _appRef: ApplicationRef
+  ) {
     this.formElements$ = this._formElService.getFormElements();
   }
-  public ngOnInit(): void {}
 
   public getForm(form: FormGroup) {
     this.form = form;
   }
 
-  public changeView() {
-    /*   console.log('dupa'); */
+  public changeView(): void {
+    if (this.form.valid) {
+      this.isChangedView = !this.isChangedView;
+    }
+  }
+
+  public resetApplication(): void {
+    this._appRef.tick();
+    const currentUrl =
+      this._appRef.components[0].location.nativeElement.baseURI;
+    window.location.href = currentUrl;
   }
 }

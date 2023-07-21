@@ -2,24 +2,7 @@
 
 form {
   display: grid;
-
   padding: 8rem 2.5rem 4rem;
-
-  .btn-confrim {
-    margin-top: 3rem;
-    background-color: colors.$clr-neutral-900;
-    color: colors.$clr-neutral-200;
-    padding: 1rem 0;
-    border: none;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-  }
-
-  .btn-confrim:is(:hover, :focus) {
-    background-color: rgba(96, 5, 148, 1);
-    box-shadow: 0 0 7px rgba(96, 5, 148, 1);
-  }
 
   .row-direction {
     display: flex;
@@ -34,10 +17,4 @@ form {
     align-content: center;
     padding-inline: 25rem;
   }
-}
-
-button:disabled {
-  opacity: 0.8;
-  cursor: not-allowed;
-  pointer-events: none;
 }

@@ -16,7 +16,8 @@
     </div>
   </ng-container>
 
-  <button class="btn-confrim" type="submit" [disabled]="!form.valid">
-    Confrim
-  </button>
+  <ui-primary-btn
+    [btnText]="'Confrim'"
+    [disabled]="!form.valid"
+  ></ui-primary-btn>
 </form>

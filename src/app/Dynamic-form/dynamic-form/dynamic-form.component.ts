@@ -15,7 +15,7 @@ export class DynamicFormComponent implements OnInit {
   @Output()
   public emitForm = new EventEmitter<FormGroup>();
   @Output()
-  public click: EventEmitter<never> = new EventEmitter<never>();
+  public clickSumbit: EventEmitter<never> = new EventEmitter<never>();
   get formControls(): FormElBase<string>[] | undefined {
     return this.formElDirection?.flatMap(
       (formEl: FormElDirection) => formEl.formElements
@@ -32,11 +32,6 @@ export class DynamicFormComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    console.log(this.form);
-    if (this.form.valid) {
-      this.click.emit();
-    } else {
-      console.log('japa');
-    }
+    this.clickSumbit.emit();
   }
 }

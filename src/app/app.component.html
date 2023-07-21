@@ -1,8 +1,13 @@
 <main>
   <app-hero [form]="form"></app-hero>
   <app-dynamic-form
+    *ngIf="!isChangedView"
     [formElDirection]="formElements$ | async"
     (emitForm)="getForm($event)"
-    (click)="changeView()"
+    (clickSumbit)="changeView()"
   ></app-dynamic-form>
+  <app-summary
+    (emitClick)="resetApplication()"
+    *ngIf="isChangedView"
+  ></app-summary>
 </main>

@@ -1,0 +1,34 @@
+@use "../../../scss/color-palette" as colors;
+
+section {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10rem;
+
+  img {
+    margin-inline: auto;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    letter-spacing: 3px;
+    opacity: 0.9;
+    color: colors.$clr-neutral-900;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: colors.$clr-neutral-500;
+  }
+}
+
+@media (min-width: 992px) {
+  section {
+    align-content: center;
+    height: 100%;
+    padding-inline: 25rem;
+  }
+}
