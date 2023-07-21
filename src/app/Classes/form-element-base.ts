@@ -36,4 +36,5 @@ export class FormElBase<T> {
 
 export class InputEl extends FormElBase<string> {
   override controlType = 'input';
+  override required: boolean = true;
 }

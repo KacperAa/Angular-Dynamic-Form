@@ -1,7 +1,7 @@
 @use "../../../scss/color-palette" as colors;
 
-input {
-  width: 100%;
+input.ng-touched.ng-invalid {
+  outline: 2px solid colors.$clr-primary-400;
 }
 
 label {
@@ -13,6 +13,7 @@ label {
 }
 
 input {
+  width: 100%;
   padding: 1rem;
   border-radius: 1rem;
   border: 1px solid colors.$clr-neutral-200;
@@ -20,4 +21,22 @@ input {
 
 ::placeholder {
   color: colors.$clr-neutral-200;
+}
+
+.error-message {
+  color: colors.$clr-primary-400;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  animation: error 0.3s ease-in-out;
+}
+
+@keyframes error {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

@@ -13,4 +13,10 @@ export class DynamicFormElComponent {
   public get isValid() {
     return this.form.controls[this.formEl.key].valid;
   }
+
+  constructor() {
+    setTimeout(() => {
+      console.log(this.form.controls[this.formEl.key]);
+    }, 0);
+  }
 }

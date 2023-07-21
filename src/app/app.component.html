@@ -1,4 +1,7 @@
 <main>
-  <app-hero></app-hero>
-  <app-dynamic-form [formElements]="formElements$ | async"></app-dynamic-form>
+  <app-hero [form]="form"></app-hero>
+  <app-dynamic-form
+    [formElements]="formElements$ | async"
+    (emitForm)="getForm($event)"
+  ></app-dynamic-form>
 </main>

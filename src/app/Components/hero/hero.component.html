@@ -4,7 +4,8 @@
       src="../../../assets/images/bg-card-back.png"
       alt="credit card back view"
     />
-    <span>000</span>
+    <span *ngIf="form.value.cvc === ''">{{ cardsInitialValue.cvc }}</span>
+    <span *ngIf="form.value.cvc !== ''">{{ form.value.cvc }}</span>
   </div>
   <div class="card card-front">
     <img
@@ -16,10 +17,25 @@
       src="../../../assets/images/card-logo.svg"
       alt="credit-card-logo"
     />
-    <span>0000 0000 0000 0000</span>
+    <span *ngIf="form.value.cardNumber === ''">{{
+      cardsInitialValue.cardNumber
+    }}</span>
+    <span *ngIf="form.value.cardNumber !== ''">{{
+      form.value.cardNumber
+    }}</span>
     <div class="card-front__name-and-date">
-      <span>Jane applesed</span>
-      <span>00/00</span>
+      <span *ngIf="form.value.cardHolderName !== ''">
+        {{ form.value.cardHolderName }}</span
+      >
+      <span *ngIf="form.value.cardHolderName === ''">
+        {{ cardsInitialValue.cardholderName }}</span
+      >
+      <span *ngIf="form.value.expDate !== '' || form.value.expDate !== ''"
+        >{{ form.value.expDate }}/{{ form.value.date }}</span
+      >
+      <span *ngIf="form.value.expDate === '' || form.value.expDate === ''"
+        >{{ cardsInitialValue.expDate }}/{{ cardsInitialValue.mmyy }}</span
+      >
     </div>
   </div>
 </section>
